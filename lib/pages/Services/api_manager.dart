@@ -13,9 +13,12 @@ class APIManager {
       if (responce.statusCode == 200) {
         var jsonString = responce.body;
         var jsonMap = jsonDecode(jsonString);
+        print("getnews jsonMap $jsonMap");
         newsModel = NewsModel.fromJson(jsonMap);
+        print("APIManager :_newsModel:: ${newsModel.toString()}");
       }
     } catch (e) {
+      print(e);
       return newsModel;
     }
     return newsModel;
