@@ -60,13 +60,14 @@ class Article {
   factory Article.fromMap(Map<String, dynamic> map) {
     return Article(
       source: Source.fromMap(map['source']),
-      author: map['author'],
-      title: map['title'],
-      description: map['description'],
-      url: map['url'],
-      urlToImage: map['urlToImage'],
-      publishedAt: DateTime.fromMillisecondsSinceEpoch(map['publishedAt']),
-      content: map['content'],
+      author: map['author'].toString(),
+      title: map['title'].toString(),
+      description: map['description'].toString(),
+      url: map['url'].toString(),
+      urlToImage: map['urlToImage'].toString(),
+      publishedAt:
+          DateTime.parse(map['publishedAt'].toString()),
+      content: map['content'].toString(),
     );
   }
 

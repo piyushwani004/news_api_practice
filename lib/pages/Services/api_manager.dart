@@ -14,7 +14,7 @@ class APIManager {
         var jsonString = responce.body;
         var jsonMap = jsonDecode(jsonString);
         print("getnews jsonMap $jsonMap");
-        newsModel = NewsModel.fromJson(jsonMap);
+        newsModel = NewsModel.fromJson(jsonString);
         print("APIManager :_newsModel:: ${newsModel.toString()}");
       }
     } catch (e) {

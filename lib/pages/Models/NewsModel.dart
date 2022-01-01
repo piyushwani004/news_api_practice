@@ -28,7 +28,7 @@ class NewsModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'status': status,
+      'status': status.toString(),
       'totalResults': totalResults,
       'articles': articles?.map((x) => x.toMap()).toList(),
     };
@@ -36,8 +36,8 @@ class NewsModel {
 
   factory NewsModel.fromMap(Map<String, dynamic> map) {
     return NewsModel(
-      status: map['status'],
-      totalResults: map['totalResults'],
+      status: map['status'].toString(),
+      totalResults: int.parse(map['totalResults'].toString()),
       articles:
           List<Article>.from(map['articles']?.map((x) => Article.fromMap(x))),
     );

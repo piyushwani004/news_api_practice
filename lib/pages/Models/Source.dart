@@ -27,8 +27,8 @@ class Source {
 
   factory Source.fromMap(Map<String, dynamic> map) {
     return Source(
-      id: map['id'],
-      name: map['name'],
+      id: map['id'].toString(),
+      name: map['name'].toString(),
     );
   }
 
